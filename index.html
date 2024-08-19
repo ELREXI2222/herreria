@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
+    <meta name="keywords" content="herrería, carpintería, residencial, muebles, diseño">
+    <meta name="author" content="Nombre del Autor">
+    <title>Herrería y Carpintería - Nombre de la Empresa</title>
+    <script src="scripts/main.js" defer></script>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Incluir jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Encabezado del sitio -->
+    <div class="header"></div>
+
+    <script>
+    
+        // Realiza la solicitud para obtener el contenido de 'header.html'
+        fetch('header.html')
+            .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
+            .then(data => {
+                // Inserta el contenido dentro del <div> con la clase 'header'
+                document.querySelector('.header').innerHTML = data;
+                
+                // Selecciona el enlace de "Inicio" usando su ID
+                const inicioLink = document.getElementById('inicio-nav');
+                
+                // Cambia el color del enlace a amarillo y lo pone en negrita
+                if (inicioLink) {
+                    inicioLink.style.color = "#1a9c74";  
+                    inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
+                }
+            });
+    
+    </script>
+    
+
+
+
+
+
+ 
+    <!-- Sección principal -->
+
+    
+    <main>
+        <section id="inicio">
+            <h1 style="text-align: center;   color: white; /* Color de la letra */
+            text-shadow: 
+                -3px -1px 0px black,  /* Sombra superior izquierda */
+                1px -1px 0px black,   /* Sombra superior derecha */
+                -1px 1px 0px black,   /* Sombra inferior izquierda */
+                1px 1px 0px black;    /* Sombra inferior derecha */
+              color: whitesmoke;">Multiservicios Laguna</h1>
+            <p style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px;">
+                Nos especializamos en la creación de muebles y estructuras personalizadas para tu hogar.
+            </p>
+            
+        </section>
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Ofrecemos una variedad de servicios de herrería para satisfacer tus necesidades de diseño y seguridad en el hogar. Algunos de nuestros servicios incluyen:</p>
+            <ul>
+                <li><strong>Puertas y Portones:</strong> Diseño y fabricación de puertas y portones de seguridad, tanto manuales como automáticos, para entradas de viviendas y garajes.</li>
+                <li><strong>Rejas y Barandales:</strong> Instalación de rejas y barandales para ventanas, balcones, escaleras y terrazas, brindando seguridad y estética.</li>
+                <li><strong>Estructuras Metálicas:</strong> Creación de estructuras metálicas para techos, pérgolas y toldos, proporcionando sombra y protección.</li>
+                <li><strong>Muebles de Metal:</strong> Diseño y fabricación de muebles personalizados, como mesas, sillas y estanterías, para interiores y exteriores.</li>
+                <li><strong>Cercas y Vallas:</strong> Construcción de cercas y vallas para delimitar propiedades y áreas específicas, con opciones decorativas y de seguridad.</li>
+            </ul>
+        </section>
+
+
+        <section id="galeria">
+            <h2>Galería de Proyectos</h2>
+            <div class="gallery-container">
+                <div class="gallery">
+                    <img src="src/porton_negro.jpg" alt="Imagen 1">
+                    <img src="src/escalera.jfif" alt="Imagen 2">
+                    <img src="src/escalera2.jfif" alt="Imagen 3">
+                    <img src="src/escalera3.jfif" alt="Imagen 4">
+
+
+
+                    <!-- Añadir más imágenes según sea necesario -->
+                </div>
+                <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+
+        <!-- Modal -->
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="gallery-full">
+            <img src="src/porton_negro.jpg" alt="Proyecto 1">
+            <img src="src/porton_negro.jpg" alt="Proyecto 2">
+            <img src="src/porton_negro.jpg" alt="Proyecto 3">
+            <img src="src/porton_negro.jpg" alt="Proyecto 4">
+            <!-- Agrega más imágenes según sea necesario -->
+        </div>
+    </div>
+
+
+</div>
+        
+        <section id="contacto">
+            <h2>Contáctanos</h2>
+            <a href="https://wa.me/tuNumeroTelefono" class="whatsapp-button">
+                <img src="src/logowats.png" alt="WhatsApp Logo" class="whatsapp-logo">
+                Contáctanos
+            </a>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="hola">
+        <p>&copy; 2024 Herrería y Carpintería. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlace al archivo JS -->
+    <script src="scripts/main.js"></script>
+
+    <script>
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const gallery = document.querySelector('.gallery');
+            const totalImages = document.querySelectorAll('.gallery img').length;
+            currentIndex = (currentIndex + direction + totalImages) % totalImages;
+            const offset = -currentIndex * 100; // Moverse en porcentaje
+            gallery.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+    var header = document.querySelector('.header');
+    var headerContent = document.querySelector('.header-content');
+
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) { // Ajusta el valor según sea necesario
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+});
+
+    </script>
+    
+
+
+
+    <style>
+
+#inicio {
+    background-image: url('src/herreria\ y\ carpinteria\ imagen\ de\ fondo.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Hace que la imagen cubra todo el área del contenedor */
+    background-position: center; /* Centra la imagen en el contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    color: white; /* Cambia el color del texto para que contraste con la imagen de fondo */
+    padding: 50px 0; /* Añade espacio alrededor del contenido */
+    text-align: center; /* Centra el contenido de texto */
+}
+
+
+    </style>
+
+
+</body>
+</html>
