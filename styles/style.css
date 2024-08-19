@@ -323,9 +323,12 @@ footer {
     
     }
 
-
-
-
-
    
+}
+
+/* Media query para pantallas con una resolución menor a 400px */
+@media (max-width: 420px) {
+    body {
+        margin-top: 42%;
+    }
 }
