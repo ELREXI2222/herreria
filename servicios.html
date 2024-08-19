@@ -59,10 +59,25 @@
  <div class="header"></div>
 
  <script>
-     fetch('header.html')
-         .then(response => response.text())
-         .then(data => document.querySelector('.header').innerHTML = data);
- </script>
+    
+    // Realiza la solicitud para obtener el contenido de 'header.html'
+    fetch('header.html')
+        .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
+        .then(data => {
+            // Inserta el contenido dentro del <div> con la clase 'header'
+            document.querySelector('.header').innerHTML = data;
+            
+            // Selecciona el enlace de "Inicio" usando su ID
+            const inicioLink = document.getElementById('servicios');
+            
+            // Cambia el color del enlace a amarillo y lo pone en negrita
+            if (inicioLink) {
+                inicioLink.style.color = "#1a9c74";  
+                inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
+            }
+        });
+
+</script>
 
 
     <main>
