@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
+    <meta name="keywords" content="herrería, carpintería, residencial, muebles, diseño">
+    <meta name="author" content="Nombre del Autor">
+    <title>Herrería y Carpintería - Nombre de la Empresa</title>
+    <script src="scripts/main.js" defer></script>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Incluir jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <!-- Encabezado del sitio -->
+ <div class="header"></div>
+
+ <script>
+    
+    // Realiza la solicitud para obtener el contenido de 'header.html'
+    fetch('header.html')
+        .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
+        .then(data => {
+            // Inserta el contenido dentro del <div> con la clase 'header'
+            document.querySelector('.header').innerHTML = data;
+            
+            // Selecciona el enlace de "Inicio" usando su ID
+            const inicioLink = document.getElementById('trabajos');
+            
+            // Cambia el color del enlace a amarillo y lo pone en negrita
+            if (inicioLink) {
+                inicioLink.style.color = "#1a9c74";  
+                inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
+            }
+        });
+
+</script>
+
+    <!-- Sección principal -->
+
+    
+    <main>
+
+        <div id="menu-desplegable">
+            <ul class="menu">
+                <li><a href="#">Estructuras Metálicas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Estructura 1</a></li>
+                        <li><a href="#">Estructura 2</a></li>
+                        <li><a href="#">Estructura 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Puertas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Puerta 1</a></li>
+                        <li><a href="#">Puerta 2</a></li>
+                        <li><a href="#">Puerta 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Ventanas</a>
+                    <ul class="submenu">
+                        <li><a href="#">Ventana 1</a></li>
+                        <li><a href="#">Ventana 2</a></li>
+                        <li><a href="#">Ventana 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Toldos</a>
+                    <ul class="submenu">
+                        <li><a href="#">Toldo 1</a></li>
+                        <li><a href="#">Toldo 2</a></li>
+                        <li><a href="#">Toldo 3</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+        <style>
+            /* Estilos del menú */
+            ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+        
+            .menu {
+                display: flex;
+                background-color: #333;
+            }
+
+            .menu-despleglable{
+               
+                display: flex;
+                justify-content: center; /* Centra los elementos horizontalmente */
+                align-items: center;     /* Centra los elementos verticalmente */
+                height: 100vh;           /* Asegúrate de que el contenedor ocupe el 100% de la altura de la ventana */
+            }
+
+            
+        
+            .menu > li {
+                position: relative;
+            }
+        
+            .menu > li > a {
+                display: block;
+                padding: 10px 20px;
+                color: white;
+                text-decoration: none;
+                background-color: #333;
+            }
+        
+            .menu > li > a:hover {
+                background-color: #444;
+            }
+        
+            .submenu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: #444;
+                min-width: 150px;
+                z-index: 1000;
+            }
+        
+            .submenu li a {
+                padding: 10px 15px;
+                color: white;
+                text-decoration: none;
+                display: block;
+            }
+        
+            .submenu li a:hover {
+                background-color: #555;
+            }
+        
+            .menu li:hover .submenu {
+                display: block;
+            }
+        </style>
+
+        <div class="gallery-container">
+            <div class="gallery">
+                <img src="src/porton_negro.jpg" alt="Imagen 1">
+                <img src="src/porton_negro.jpg" alt="Imagen 2">
+                <img src="src/porton_negro.jpg" alt="Imagen 3">
+                <!-- Añadir más imágenes según sea necesario -->
+            </div>
+            <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    
+        <script>
+            // Controla el desplazamiento de la galería de imágenes hacia adelante o atrás.
+            // La función moveSlide recibe una dirección (-1 para retroceder y 1 para avanzar) y ajusta el índice actual de la imagen.
+            // Calcula el desplazamiento adecuado basado en el índice actual para mover la galería horizontalmente.
+            let currentIndex = 0;
+    
+            function moveSlide(direction) {
+                const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería
+                const totalImages = document.querySelectorAll('.gallery img').length; // Cuenta el número total de imágenes en la galería
+                currentIndex = (currentIndex + direction + totalImages) % totalImages; // Calcula el nuevo índice, asegurando que esté en el rango válido
+                const offset = -currentIndex * 100; // Desplaza la galería en un porcentaje del ancho de la imagen
+                gallery.style.transform = `translateX(${offset}%)`; // Aplica la transformación para mostrar la imagen correcta
+            }
+        </script>
+  
+        
+       
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="hola">
+        <p>&copy; 2024 Herrería y Carpintería. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Enlace al archivo JS -->
+    <script src="scripts/main.js"></script>
+
+ 
+
+    <script>
+        // Script para gestionar el comportamiento del header en función del desplazamiento del scroll.
+        // Agrega o quita la clase 'scrolled' al header cuando el usuario se desplaza más de 50 píxeles hacia abajo.
+        // Esto permite modificar el estilo del header, por ejemplo, hacer que se contraiga o cambie de color al hacer scroll.
+        document.addEventListener("DOMContentLoaded", function() {
+            var header = document.querySelector('.header');
+            var headerContent = document.querySelector('.header-content'); // Elemento opcional para contenido adicional del header
+    
+            // Detecta el desplazamiento del scroll en la ventana
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) { // Si el desplazamiento es mayor a 50 píxeles
+                    header.classList.add('scrolled'); // Aplica la clase 'scrolled' al header
+                } else {
+                    header.classList.remove('scrolled'); // Elimina la clase 'scrolled' si se vuelve al principio
+                }
+            });
+        });
+    </script>
+    
+    
+
+
+
+</body>
+</html>

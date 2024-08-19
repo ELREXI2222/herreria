@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Imágenes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .gallery-container {
+            position: relative;
+            width: 80%;
+            max-width: 600px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.3s ease-in-out;
+        }
+        .gallery img {
+            width: 100%;
+            height: auto;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery">
+            <img src="src/porton_negro.jpg" alt="Imagen 1">
+            <img src="src/porton_negro.jpg" alt="Imagen 2">
+            <img src="src/porton_negro.jpg" alt="Imagen 3">
+            <!-- Añadir más imágenes según sea necesario -->
+        </div>
+        <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        // Controla el desplazamiento de la galería de imágenes hacia adelante o atrás.
+        // La función moveSlide recibe una dirección (-1 para retroceder y 1 para avanzar) y ajusta el índice actual de la imagen.
+        // Calcula el desplazamiento adecuado basado en el índice actual para mover la galería horizontalmente.
+        let currentIndex = 0;
+
+        function moveSlide(direction) {
+            const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería
+            const totalImages = document.querySelectorAll('.gallery img').length; // Cuenta el número total de imágenes en la galería
+            currentIndex = (currentIndex + direction + totalImages) % totalImages; // Calcula el nuevo índice, asegurando que esté en el rango válido
+            const offset = -currentIndex * 100; // Desplaza la galería en un porcentaje del ancho de la imagen
+            gallery.style.transform = `translateX(${offset}%)`; // Aplica la transformación para mostrar la imagen correcta
+        }
+    </script>
+</body>
+</html>
