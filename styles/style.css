@@ -332,3 +332,11 @@ footer {
         margin-top: 42%;
     }
 }
+
+/* Media query para pantallas con una resolución mayor a 720px */
+@media (min-width: 721px) {
+    main {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+}

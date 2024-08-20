@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,35 +14,36 @@
     <!-- Incluir jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <!-- Encabezado del sitio -->
- <div class="header"></div>
+    <div class="header"></div>
 
- <script>
-    
-    // Realiza la solicitud para obtener el contenido de 'header.html'
-    fetch('header.html')
-        .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
-        .then(data => {
-            // Inserta el contenido dentro del <div> con la clase 'header'
-            document.querySelector('.header').innerHTML = data;
-            
-            // Selecciona el enlace de "Inicio" usando su ID
-            const inicioLink = document.getElementById('contacto');
-            
-            // Cambia el color del enlace a amarillo y lo pone en negrita
-            if (inicioLink) {
-                inicioLink.style.color = "#1a9c74";  
-                inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
-            }
-        });
+    <script>
 
-</script>
+        // Realiza la solicitud para obtener el contenido de 'header.html'
+        fetch('header.html')
+            .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
+            .then(data => {
+                // Inserta el contenido dentro del <div> con la clase 'header'
+                document.querySelector('.header').innerHTML = data;
+
+                // Selecciona el enlace de "Inicio" usando su ID
+                const inicioLink = document.getElementById('contacto');
+
+                // Cambia el color del enlace a amarillo y lo pone en negrita
+                if (inicioLink) {
+                    inicioLink.style.color = "#1a9c74";
+                    inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
+                }
+            });
+
+    </script>
 
     <!-- Sección principal -->
     <main>
 
-</div>
+        </div>
 
 
 
@@ -54,7 +56,7 @@
 
 
 
-        
+
         <section id="contacto">
 
             <h2>Contáctanos</h2>
@@ -64,10 +66,61 @@
                 Contáctanos por WhatsApp
             </a>
 
-            <a href="https://wa.me/tuNumeroTelefono" class="correo-button" style="margin-top: 10px;">
+            <a href="mailto:reyabel999@gmail.com" class="correo-button" style="margin-top: 10px;">
                 <img src="src/logo correo electronico.png" alt="WhatsApp Logo" class="whatsapp-logo">
                 Envianos un Correo electronico
             </a>
+            <p style="display: flex; align-items: center;">
+                reyabel999@gmail.com
+                <button class="copiar-button" onclick="copiarAlPortapapeles()" style="margin-left: 10px;">Copiar
+                    portapapeles</button>
+            </p>
+
+            <div id="mensaje-copiado" class="mensaje-copiado">¡Correo copiado!</div>
+
+            <script>
+
+                function copiarAlPortapapeles() {
+                    const correo = "reyabel999@gmail.com";
+                    navigator.clipboard.writeText(correo).then(() => {
+                        mostrarMensajeCopiado();
+                    }).catch(err => {
+                        alert("Error al copiar el correo: " + err);
+                    });
+                }
+
+                function mostrarMensajeCopiado() {
+                    const mensaje = document.getElementById("mensaje-copiado");
+                    mensaje.classList.add("show");
+
+                    // Ocultar el mensaje después de 2 segundos
+                    setTimeout(() => {
+                        mensaje.classList.remove("show");
+                    }, 2000);
+                }
+
+            </script>
+
+            <style>
+                .mensaje-copiado {
+                    opacity: 0;
+                    visibility: hidden;
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 10px;
+                    border-radius: 5px;
+                    position: fixed;
+                    top: 40%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    transition: opacity 0.5s ease, visibility 0.5s ease;
+                }
+
+                .mensaje-copiado.show {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            </style>
 
         </section>
 
@@ -82,9 +135,9 @@
                 <img src="src/icono instagram.png" alt="Instagram">
             </a>
         </section>
-        
 
-       
+
+
 
     </main>
 
@@ -108,52 +161,60 @@
         }
     </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var header = document.querySelector('.header');
-    
-        window.onscroll = function() {
-            if (window.pageYOffset > 50) { // Ajusta el valor según sea necesario
-                header.classList.add("scrolled");
-            } else {
-                header.classList.remove("scrolled");
-            }
-        };
-    });
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var header = document.querySelector('.header');
+
+            window.onscroll = function () {
+                if (window.pageYOffset > 50) { // Ajusta el valor según sea necesario
+                    header.classList.add("scrolled");
+                } else {
+                    header.classList.remove("scrolled");
+                }
+            };
+        });
     </script>
 
 
-<style>
-
-#horario p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 3vw; /* Ajusta el tamaño del texto según sea necesario */
-    color: #333333; /* Cambia el color del texto */
-    line-height: 1.5; /* Espacio entre líneas */
-    margin-bottom: 10px; /* Espacio inferior entre párrafos */
-}
-
-
-#redes-sociales img{
-
-    width: 50px; /* Define el ancho deseado */
-    height: 50px; /* Define la altura deseada */
-    object-fit: cover; /* Ajusta la imagen para que se mantenga dentro del contenedor sin deformarse */
-    margin-right: 10px; /* Añade un pequeño margen entre las imágenes */
-    transition: transform 0.3s ease; /* Transición suave para animaciones */
+    <style>
+        #horario p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 3vw;
+            /* Ajusta el tamaño del texto según sea necesario */
+            color: #333333;
+            /* Cambia el color del texto */
+            line-height: 1.5;
+            /* Espacio entre líneas */
+            margin-bottom: 10px;
+            /* Espacio inferior entre párrafos */
+        }
 
 
-}
+        #redes-sociales img {
 
-#redes-sociales img:hover {
-    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
-}
+            width: 50px;
+            /* Define el ancho deseado */
+            height: 50px;
+            /* Define la altura deseada */
+            object-fit: cover;
+            /* Ajusta la imagen para que se mantenga dentro del contenedor sin deformarse */
+            margin-right: 10px;
+            /* Añade un pequeño margen entre las imágenes */
+            transition: transform 0.3s ease;
+            /* Transición suave para animaciones */
 
 
-</style>
-    
-    
+        }
+
+        #redes-sociales img:hover {
+            transform: scale(1.1);
+            /* Efecto de zoom al pasar el cursor */
+        }
+    </style>
+
+
 
 
 </body>
+
 </html>
