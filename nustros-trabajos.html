@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
+    <meta name="description"
+        content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
     <meta name="keywords" content="herrería, carpintería, residencial, muebles, diseño">
     <meta name="author" content="Nombre del Autor">
     <title>Herrería y Carpintería - Nombre de la Empresa</title>
@@ -13,151 +15,169 @@
     <!-- Incluir jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <!-- Encabezado del sitio -->
- <div class="header"></div>
+    <div class="header"></div>
 
- <script>
-    
-    // Realiza la solicitud para obtener el contenido de 'header.html'
-    fetch('header.html')
-        .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
-        .then(data => {
-            // Inserta el contenido dentro del <div> con la clase 'header'
-            document.querySelector('.header').innerHTML = data;
-            
-            // Selecciona el enlace de "Inicio" usando su ID
-            const inicioLink = document.getElementById('trabajos');
-            
-            // Cambia el color del enlace a amarillo y lo pone en negrita
-            if (inicioLink) {
-                inicioLink.style.color = "#1a9c74";  
-                inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
-            }
-        });
+    <script>
 
-</script>
+        // Realiza la solicitud para obtener el contenido de 'header.html'
+        fetch('header.html')
+            .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
+            .then(data => {
+                // Inserta el contenido dentro del <div> con la clase 'header'
+                document.querySelector('.header').innerHTML = data;
+
+                // Selecciona el enlace de "Inicio" usando su ID
+                const inicioLink = document.getElementById('trabajos');
+
+                // Cambia el color del enlace a amarillo y lo pone en negrita
+                if (inicioLink) {
+                    inicioLink.style.color = "#1a9c74";
+                    inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
+                }
+            });
+
+    </script>
 
     <!-- Sección principal -->
 
-    
+
     <main>
 
-        <div id="menu-desplegable">
-            <ul class="menu">
-                <li><a href="#">Estructuras Metálicas</a>
-                    <ul class="submenu">
-                        <li><a href="#">Estructura 1</a></li>
-                        <li><a href="#">Estructura 2</a></li>
-                        <li><a href="#">Estructura 3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Puertas</a>
-                    <ul class="submenu">
-                        <li><a href="#">Puerta 1</a></li>
-                        <li><a href="#">Puerta 2</a></li>
-                        <li><a href="#">Puerta 3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Ventanas</a>
-                    <ul class="submenu">
-                        <li><a href="#">Ventana 1</a></li>
-                        <li><a href="#">Ventana 2</a></li>
-                        <li><a href="#">Ventana 3</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Toldos</a>
-                    <ul class="submenu">
-                        <li><a href="#">Toldo 1</a></li>
-                        <li><a href="#">Toldo 2</a></li>
-                        <li><a href="#">Toldo 3</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-        
+        <section id="nuestros-trabajos">
+            <h2>Nuestros Trabajos</h2>
+            <p>En esta sección, te mostramos una selección de nuestros trabajos más recientes y destacados. Cada
+                proyecto refleja nuestro compromiso con la calidad y la atención al detalle en la herrería y carpintería
+                residencial. Navega por nuestra galería para ver una variedad de estructuras metálicas, puertas,
+                ventanas y más. Estamos seguros de que encontrarás inspiración para tu próximo proyecto.</p>
+            <p>Haz clic en las imágenes para ver más detalles o contacta con nosotros para discutir cómo podemos
+                ayudarte a hacer realidad tus ideas.</p>
+            <div id="menu-desplegable">
+                <label for="menu">Selecciona una categoría:</label>
+                <select id="menu">
+                    <optgroup label="Estructuras Metálicas">
+                        <option value="estructura1">Estructura 1</option>
+                        <option value="estructura2">Estructura 2</option>
+                        <option value="estructura3">Estructura 3</option>
+                    </optgroup>
+                    <optgroup label="Puertas">
+                        <option value="puerta1">Puerta 1</option>
+                        <option value="puerta2">Puerta 2</option>
+                        <option value="puerta3">Puerta 3</option>
+                    </optgroup>
+                    <optgroup label="Ventanas">
+                        <option value="ventana1">Ventana 1</option>
+                        <option value="ventana2">Ventana 2</option>
+                        <option value="ventana3">Ventana 3</option>
+                    </optgroup>
+                    <optgroup label="Toldos">
+                        <option value="toldo1">Toldo 1</option>
+                        <option value="toldo2">Toldo 2</option>
+                        <option value="toldo3">Toldo 3</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="gallery-container">
+                <div class="gallery">
+                    <img src="src/porton_negro.jpg" alt="Imagen 1">
+                    <img src="src/porton_negro.jpg" alt="Imagen 2">
+                    <img src="src/porton_negro.jpg" alt="Imagen 3">
+                    <!-- Añadir más imágenes según sea necesario -->
+                </div>
+                <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </section>
+
+
         <style>
-            /* Estilos del menú */
-            ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
-        
-            .menu {
-                display: flex;
-                background-color: #333;
+            #nuestros-trabajos {
+                padding: 20px;
+                background-color: #f9f9f9;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin: 20px 0;
             }
 
-            .menu-despleglable{
-               
-                display: flex;
-                justify-content: center; /* Centra los elementos horizontalmente */
-                align-items: center;     /* Centra los elementos verticalmente */
-                height: 100vh;           /* Asegúrate de que el contenedor ocupe el 100% de la altura de la ventana */
+            #nuestros-trabajos h2 {
+                font-size: 2em;
+                color: #333;
+                margin-bottom: 10px;
             }
 
-            
-        
-            .menu > li {
+            #nuestros-trabajos p {
+                font-size: 1.1em;
+                color: #555;
+                line-height: 1.6;
+            }
+
+            #menu-desplegable {
+                margin: 20px 0;
+            }
+
+            #menu {
+                width: 100%;
+                max-width: 300px;
+                padding: 10px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+            }
+
+            .gallery-container {
                 position: relative;
+                overflow: hidden;
+                width: 100%;
+                max-width: 800px;
+                margin: auto;
             }
-        
-            .menu > li > a {
-                display: block;
-                padding: 10px 20px;
-                color: white;
-                text-decoration: none;
-                background-color: #333;
+
+            .gallery {
+                display: flex;
+                transition: transform 0.5s ease;
             }
-        
-            .menu > li > a:hover {
-                background-color: #444;
+
+            .gallery img {
+                width: 100%;
+                flex-shrink: 0;
+                border-radius: 8px;
             }
-        
-            .submenu {
-                display: none;
+
+            .nav-button {
                 position: absolute;
-                top: 100%;
-                left: 0;
-                background-color: #444;
-                min-width: 150px;
-                z-index: 1000;
-            }
-        
-            .submenu li a {
-                padding: 10px 15px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.5);
+                border: none;
                 color: white;
-                text-decoration: none;
-                display: block;
+                padding: 10px;
+                cursor: pointer;
+                border-radius: 50%;
+                font-size: 1.5em;
             }
-        
-            .submenu li a:hover {
-                background-color: #555;
+
+            .nav-button.prev {
+                left: 10px;
             }
-        
-            .menu li:hover .submenu {
-                display: block;
+
+            .nav-button.next {
+                right: 10px;
             }
         </style>
-
-        <div class="gallery-container">
-            <div class="gallery">
-                <img src="src/porton_negro.jpg" alt="Imagen 1">
-                <img src="src/porton_negro.jpg" alt="Imagen 2">
-                <img src="src/porton_negro.jpg" alt="Imagen 3">
-                <!-- Añadir más imágenes según sea necesario -->
-            </div>
-            <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
-            <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-    
+
+
+
         <script>
             // Controla el desplazamiento de la galería de imágenes hacia adelante o atrás.
             // La función moveSlide recibe una dirección (-1 para retroceder y 1 para avanzar) y ajusta el índice actual de la imagen.
             // Calcula el desplazamiento adecuado basado en el índice actual para mover la galería horizontalmente.
             let currentIndex = 0;
-    
+
             function moveSlide(direction) {
                 const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería
                 const totalImages = document.querySelectorAll('.gallery img').length; // Cuenta el número total de imágenes en la galería
@@ -166,9 +186,9 @@
                 gallery.style.transform = `translateX(${offset}%)`; // Aplica la transformación para mostrar la imagen correcta
             }
         </script>
-  
-        
-       
+
+
+
     </main>
 
     <!-- Pie de página -->
@@ -179,18 +199,18 @@
     <!-- Enlace al archivo JS -->
     <script src="scripts/main.js"></script>
 
- 
+
 
     <script>
         // Script para gestionar el comportamiento del header en función del desplazamiento del scroll.
         // Agrega o quita la clase 'scrolled' al header cuando el usuario se desplaza más de 50 píxeles hacia abajo.
         // Esto permite modificar el estilo del header, por ejemplo, hacer que se contraiga o cambie de color al hacer scroll.
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var header = document.querySelector('.header');
             var headerContent = document.querySelector('.header-content'); // Elemento opcional para contenido adicional del header
-    
+
             // Detecta el desplazamiento del scroll en la ventana
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 if (window.scrollY > 50) { // Si el desplazamiento es mayor a 50 píxeles
                     header.classList.add('scrolled'); // Aplica la clase 'scrolled' al header
                 } else {
@@ -199,10 +219,11 @@
             });
         });
     </script>
-    
-    
+
+
 
 
 
 </body>
+
 </html>

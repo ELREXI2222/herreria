@@ -47,94 +47,148 @@
 
 
 
-        <section id="horario">
+        <<section id="horario">
             <h3>Horario de Atención</h3>
             <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
             <p>Sábado: 9:00 AM - 2:00 PM</p>
-            <p style="color: brown;">Domingo: Cerrado</p>
-        </section>
+            <p class="cerrado">Domingo: Cerrado</p>
+            </section>
 
-
-
-
-        <section id="contacto">
-
-            <h2>Contáctanos</h2>
-
-            <a href="https://wa.me/tuNumeroTelefono" class="whatsapp-button">
-                <img src="src/logowats.png" alt="WhatsApp Logo" class="whatsapp-logo">
-                Contáctanos por WhatsApp
-            </a>
-
-            <a href="mailto:reyabel999@gmail.com" class="correo-button" style="margin-top: 10px;">
-                <img src="src/logo correo electronico.png" alt="WhatsApp Logo" class="whatsapp-logo">
-                Envianos un Correo electronico
-            </a>
-            <p style="display: flex; align-items: center;">
-                reyabel999@gmail.com
-                <button class="copiar-button" onclick="copiarAlPortapapeles()" style="margin-left: 10px;">Copiar
-                    portapapeles</button>
-            </p>
-
-            <div id="mensaje-copiado" class="mensaje-copiado">¡Correo copiado!</div>
-
-            <script>
-
-                function copiarAlPortapapeles() {
-                    const correo = "reyabel999@gmail.com";
-                    navigator.clipboard.writeText(correo).then(() => {
-                        mostrarMensajeCopiado();
-                    }).catch(err => {
-                        alert("Error al copiar el correo: " + err);
-                    });
-                }
-
-                function mostrarMensajeCopiado() {
-                    const mensaje = document.getElementById("mensaje-copiado");
-                    mensaje.classList.add("show");
-
-                    // Ocultar el mensaje después de 2 segundos
-                    setTimeout(() => {
-                        mensaje.classList.remove("show");
-                    }, 2000);
-                }
-
-            </script>
 
             <style>
-                .mensaje-copiado {
-                    opacity: 0;
-                    visibility: hidden;
-                    background-color: #4CAF50;
-                    color: white;
-                    padding: 10px;
-                    border-radius: 5px;
-                    position: fixed;
-                    top: 40%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    transition: opacity 0.5s ease, visibility 0.5s ease;
+                /* Estilos generales para la sección de horario */
+                #horario {
+                    background-color: #f9f9f9;
+                    /* Fondo gris claro para resaltar la sección */
+                    border: 1px solid #ddd;
+                    /* Borde suave alrededor de la sección */
+                    border-radius: 8px;
+                    /* Bordes redondeados */
+                    padding: 20px;
+                    /* Espacio interior */
+                    margin: 20px auto;
+                    /* Margen automático para centrar la sección */
+                    max-width: 500px;
+                    /* Ancho máximo de la sección */
+                    text-align: center;
+                    /* Centrar el texto */
+
+
+                    /* Añadir sombra */
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    /* Sombra sutil */
                 }
 
-                .mensaje-copiado.show {
-                    opacity: 1;
-                    visibility: visible;
+                /* Estilos para el encabezado de la sección */
+                #horario h3 {
+                    font-size: 1.5em;
+                    /* Tamaño de fuente más grande para el encabezado */
+                    color: #333;
+                    /* Color gris oscuro para el texto */
+                    margin-bottom: 10px;
+                    /* Espacio inferior para separar del contenido */
+                }
+
+                /* Estilos para los párrafos de horarios */
+                #horario p {
+                    font-size: 1.2em;
+                    /* Tamaño de fuente para los párrafos */
+                    color: #555;
+                    /* Color gris medio para el texto */
+                    margin: 5px 0;
+                    /* Espacio arriba y abajo de los párrafos */
+                }
+
+                /* Estilo para el párrafo que indica el día cerrado */
+                #horario .cerrado {
+                    color: #a52a2a;
+                    /* Color marrón para indicar cerrado */
+                    font-weight: bold;
+                    /* Fuente en negrita para destacar */
                 }
             </style>
 
-        </section>
 
 
 
-        <section id="redes-sociales">
-            <h3>Síguenos en nuestras redes sociales</h3>
-            <a href="https://www.facebook.com/tuPagina" target="_blank">
-                <img src="src/icono facebook.png" alt="Facebook">
-            </a>
-            <a href="https://www.instagram.com/tuPagina" target="_blank">
-                <img src="src/icono instagram.png" alt="Instagram">
-            </a>
-        </section>
+            <section id="contacto">
+
+                <h2>Contáctanos</h2>
+
+                <a href="https://wa.me/8713548934" class="whatsapp-button">
+                    <img src="src/logowats.png" alt="WhatsApp Logo" class="whatsapp-logo">
+                    Contáctanos por WhatsApp
+                </a>
+
+                <a href="mailto:reyabel999@gmail.com" class="correo-button" style="margin-top: 10px;">
+                    <img src="src/logo correo electronico.png" alt="WhatsApp Logo" class="whatsapp-logo">
+                    Envianos un Correo electronico
+                </a>
+                <p style="display: flex; align-items: center; margin: 2%;">
+                    reyabel999@gmail.com
+                    <button class="copiar-button" onclick="copiarAlPortapapeles()" style="margin-left: 10px;">Copiar
+                        portapapeles</button>
+                </p>
+
+                <div id="mensaje-copiado" class="mensaje-copiado">¡Correo copiado!</div>
+
+                <script>
+
+                    function copiarAlPortapapeles() {
+                        const correo = "reyabel999@gmail.com";
+                        navigator.clipboard.writeText(correo).then(() => {
+                            mostrarMensajeCopiado();
+                        }).catch(err => {
+                            alert("Error al copiar el correo: " + err);
+                        });
+                    }
+
+                    function mostrarMensajeCopiado() {
+                        const mensaje = document.getElementById("mensaje-copiado");
+                        mensaje.classList.add("show");
+
+                        // Ocultar el mensaje después de 2 segundos
+                        setTimeout(() => {
+                            mensaje.classList.remove("show");
+                        }, 2000);
+                    }
+
+                </script>
+
+                <style>
+                    .mensaje-copiado {
+                        opacity: 0;
+                        visibility: hidden;
+                        background-color: #4CAF50;
+                        color: white;
+                        padding: 10px;
+                        border-radius: 5px;
+                        position: fixed;
+                        top: 40%;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        transition: opacity 0.5s ease, visibility 0.5s ease;
+                    }
+
+                    .mensaje-copiado.show {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                </style>
+
+            </section>
+
+
+
+            <section id="redes-sociales">
+                <h3>Síguenos en nuestras redes sociales</h3>
+                <a href="https://www.facebook.com/tuPagina" target="_blank">
+                    <img src="src/icono facebook.png" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/tuPagina" target="_blank">
+                    <img src="src/icono instagram.png" alt="Instagram">
+                </a>
+            </section>
 
 
 
