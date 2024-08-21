@@ -381,10 +381,7 @@ footer {
 }
 
 @media (max-width: 446px) {
-    body {
-        margin-top: 50%;
-    }
-
+   
     /* Estilo para los enlaces de navegación */
     .nav-list a {
         margin-left: 5px;

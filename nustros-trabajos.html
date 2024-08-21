@@ -218,6 +218,40 @@
                 }
             });
         });
+
+
+
+
+        // scrip para arrastrar a la izq y derecha la siguiente imagen 
+        let currentIndex2 = 0;
+let startX = 0;
+let endX = 0;
+
+function moveSlide(direction) {
+    const gallery = document.querySelector('.gallery');
+    const totalImages = document.querySelectorAll('.gallery img').length;
+    currentIndex2 = (currentIndex2 + direction + totalImages) % totalImages;
+    const offset = -currentIndex2 * 100;
+    gallery.style.transform = `translateX(${offset}%)`;
+}
+
+document.querySelector('.gallery-container').addEventListener('touchstart', function (e) {
+    startX = e.touches[0].clientX;  // Captura la posición inicial del toque
+});
+
+document.querySelector('.gallery-container').addEventListener('touchmove', function (e) {
+    endX = e.touches[0].clientX;  // Captura la posición en movimiento
+});
+
+document.querySelector('.gallery-container').addEventListener('touchend', function (e) {
+    const threshold = 50;  // Umbral mínimo para considerar un swipe
+    if (startX - endX > threshold) {
+        moveSlide(1);  // Desplaza hacia la derecha
+    } else if (endX - startX > threshold) {
+        moveSlide(-1);  // Desplaza hacia la izquierda
+    }
+});
+
     </script>
 
 
