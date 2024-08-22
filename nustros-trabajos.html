@@ -10,6 +10,8 @@
     <meta name="author" content="Nombre del Autor">
     <title>Herrería y Carpintería - Nombre de la Empresa</title>
     <script src="scripts/main.js" defer></script>
+    <script src="nustros-trabajos.js" defer></script>
+
     <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="styles/style.css">
     <!-- Incluir jQuery -->
@@ -47,35 +49,67 @@
     <main>
 
         <section id="nuestros-trabajos">
-            <h2>Nuestros Trabajos</h2>
-            <p>En esta sección, te mostramos una selección de nuestros trabajos más recientes y destacados. Cada
-                proyecto refleja nuestro compromiso con la calidad y la atención al detalle en la herrería y carpintería
-                residencial. Navega por nuestra galería para ver una variedad de estructuras metálicas, puertas,
-                ventanas y más. Estamos seguros de que encontrarás inspiración para tu próximo proyecto.</p>
-            <p>Haz clic en las imágenes para ver más detalles o contacta con nosotros para discutir cómo podemos
-                ayudarte a hacer realidad tus ideas.</p>
+
+
+            <div id="div-nuestros-trabajos">
+                <h2>Nuestros Trabajos</h2>
+                <p>Te presentamos una selección de nuestros proyectos en herrería y carpintería residencial.</p>
+                <p>Haz clic en las imágenes para ver más detalles o contáctanos para discutir tu proyecto.</p>
+            </div>
+
+
+            <style>
+                #div-nuestros-trabajos {
+                    text-align: center;
+                    /* Centra el texto */
+                    max-width: 600px;
+                    /* Limita el ancho del contenido */
+                    margin: 0 auto;
+                    /* Centra el contenedor */
+                    opacity: 0;
+                    transition: opacity 1s ease-in-out;
+                }
+
+                #div-nuestros-trabajos.show {
+                    opacity: 1;
+                }
+
+                #div-nuestros-trabajos h2 {
+                    font-size: 1.5em;
+                    margin-bottom: 10px;
+                    color: #007BFF;
+                    /* Color destacado para el título */
+                }
+
+                #div-nuestros-trabajos p {
+                    font-size: 1em;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
+            </style>
+
+
+            <hr style="border: 2px solid #ccc; margin: 20px 0;">
+
+
             <div id="menu-desplegable">
                 <label for="menu">Selecciona una categoría:</label>
                 <select id="menu">
                     <optgroup label="Estructuras Metálicas">
                         <option value="estructura1">Estructura 1</option>
-                        <option value="estructura2">Estructura 2</option>
-                        <option value="estructura3">Estructura 3</option>
+                        n>
                     </optgroup>
                     <optgroup label="Puertas">
                         <option value="puerta1">Puerta 1</option>
-                        <option value="puerta2">Puerta 2</option>
-                        <option value="puerta3">Puerta 3</option>
+
                     </optgroup>
                     <optgroup label="Ventanas">
                         <option value="ventana1">Ventana 1</option>
-                        <option value="ventana2">Ventana 2</option>
-                        <option value="ventana3">Ventana 3</option>
+
                     </optgroup>
                     <optgroup label="Toldos">
                         <option value="toldo1">Toldo 1</option>
-                        <option value="toldo2">Toldo 2</option>
-                        <option value="toldo3">Toldo 3</option>
+
                     </optgroup>
                 </select>
             </div>
@@ -115,18 +149,49 @@
             }
 
             #menu-desplegable {
-                margin: 20px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 20vh;
+                /* Asegura que el contenido esté centrado verticalmente */
+                background-color: white;
+                /* Fondo blanco */
+            }
+
+            #menu-desplegable label {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+                /* Espacio entre el label y el select */
+                color: #333;
+                /* Color del texto */
             }
 
             #menu {
                 width: 100%;
                 max-width: 300px;
+                /* Controla el ancho del menú */
                 padding: 10px;
-                font-size: 16px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                background-color: #fff;
+                font-size: 1em;
+                border: 2px solid #007BFF;
+                /* Borde azul */
+                border-radius: 5px;
+                background-color: #f8f9fa;
+                /* Fondo gris claro */
+                color: #333;
             }
+
+            #menu optgroup {
+                font-weight: bold;
+                color: #555;
+                /* Color de los optgroups */
+            }
+
+            #menu option {
+                padding: 5px;
+                color: #333;
+            }
+
 
             .gallery-container {
                 position: relative;
@@ -224,33 +289,33 @@
 
         // scrip para arrastrar a la izq y derecha la siguiente imagen 
         let currentIndex2 = 0;
-let startX = 0;
-let endX = 0;
+        let startX = 0;
+        let endX = 0;
 
-function moveSlide(direction) {
-    const gallery = document.querySelector('.gallery');
-    const totalImages = document.querySelectorAll('.gallery img').length;
-    currentIndex2 = (currentIndex2 + direction + totalImages) % totalImages;
-    const offset = -currentIndex2 * 100;
-    gallery.style.transform = `translateX(${offset}%)`;
-}
+        function moveSlide(direction) {
+            const gallery = document.querySelector('.gallery');
+            const totalImages = document.querySelectorAll('.gallery img').length;
+            currentIndex2 = (currentIndex2 + direction + totalImages) % totalImages;
+            const offset = -currentIndex2 * 100;
+            gallery.style.transform = `translateX(${offset}%)`;
+        }
 
-document.querySelector('.gallery-container').addEventListener('touchstart', function (e) {
-    startX = e.touches[0].clientX;  // Captura la posición inicial del toque
-});
+        document.querySelector('.gallery-container').addEventListener('touchstart', function (e) {
+            startX = e.touches[0].clientX;  // Captura la posición inicial del toque
+        });
 
-document.querySelector('.gallery-container').addEventListener('touchmove', function (e) {
-    endX = e.touches[0].clientX;  // Captura la posición en movimiento
-});
+        document.querySelector('.gallery-container').addEventListener('touchmove', function (e) {
+            endX = e.touches[0].clientX;  // Captura la posición en movimiento
+        });
 
-document.querySelector('.gallery-container').addEventListener('touchend', function (e) {
-    const threshold = 50;  // Umbral mínimo para considerar un swipe
-    if (startX - endX > threshold) {
-        moveSlide(1);  // Desplaza hacia la derecha
-    } else if (endX - startX > threshold) {
-        moveSlide(-1);  // Desplaza hacia la izquierda
-    }
-});
+        document.querySelector('.gallery-container').addEventListener('touchend', function (e) {
+            const threshold = 50;  // Umbral mínimo para considerar un swipe
+            if (startX - endX > threshold) {
+                moveSlide(1);  // Desplaza hacia la derecha
+            } else if (endX - startX > threshold) {
+                moveSlide(-1);  // Desplaza hacia la izquierda
+            }
+        });
 
     </script>
 
