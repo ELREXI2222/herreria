@@ -1,53 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
+    <meta name="description"
+        content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
     <meta name="keywords" content="herrería, carpintería, residencial, muebles, diseño">
     <meta name="author" content="Nombre del Autor">
     <title>Herrería y Carpintería - Nombre de la Empresa</title>
     <meta name="theme-color" content="#333">
-    
+
     <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Enlace a Google Fonts para una nueva fuente -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+
     <!-- Incluir jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
+
 <body>
     <!-- Encabezado del sitio -->
     <div class="header"></div>
 
     <script>
-    
+
         // Realiza la solicitud para obtener el contenido de 'header.html'
         fetch('header.html')
             .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
             .then(data => {
                 // Inserta el contenido dentro del <div> con la clase 'header'
                 document.querySelector('.header').innerHTML = data;
-                
+
                 // Selecciona el enlace de "Inicio" usando su ID
                 const inicioLink = document.getElementById('inicio-nav');
-                
+
                 // Cambia el color del enlace a amarillo y lo pone en negrita
                 if (inicioLink) {
-                    inicioLink.style.color = "#1a9c74";  
+                    inicioLink.style.color = "#1a9c74";
                     inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
                 }
             });
-    
+
     </script>
-    
 
 
 
 
 
- 
+
+
     <!-- Sección principal -->
 
-    
+
     <main>
         <section id="inicio">
             <h1 style="text-align: center;   color: white; /* Color de la letra */
@@ -60,17 +67,23 @@
             <p style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px;">
                 Nos especializamos en la creación de muebles y estructuras personalizadas para tu hogar.
             </p>
-            
+
         </section>
-        <section id="servicios">
+        <section id="servicios2">
             <h2>Nuestros Servicios</h2>
-            <p>Ofrecemos una variedad de servicios de herrería para satisfacer tus necesidades de diseño y seguridad en el hogar. Algunos de nuestros servicios incluyen:</p>
+            <p>Ofrecemos una variedad de servicios de herrería para satisfacer tus necesidades de diseño y seguridad en
+                el hogar. Algunos de nuestros servicios incluyen:</p>
             <ul>
-                <li><strong>Puertas y Portones:</strong> Diseño y fabricación de puertas y portones de seguridad, tanto manuales como automáticos, para entradas de viviendas y garajes.</li>
-                <li><strong>Rejas y Barandales:</strong> Instalación de rejas y barandales para ventanas, balcones, escaleras y terrazas, brindando seguridad y estética.</li>
-                <li><strong>Estructuras Metálicas:</strong> Creación de estructuras metálicas para techos, pérgolas y toldos, proporcionando sombra y protección.</li>
-                <li><strong>Muebles de Metal:</strong> Diseño y fabricación de muebles personalizados, como mesas, sillas y estanterías, para interiores y exteriores.</li>
-                <li><strong>Cercas y Vallas:</strong> Construcción de cercas y vallas para delimitar propiedades y áreas específicas, con opciones decorativas y de seguridad.</li>
+                <li><strong>Puertas y Portones:</strong> Diseño y fabricación de puertas y portones de seguridad, tanto
+                    manuales como automáticos.</li>
+                <li><strong>Rejas y Barandales:</strong> Instalación de rejas y barandales para ventanas, balcones,
+                    escaleras y terrazas.</li>
+                <li><strong>Estructuras Metálicas:</strong> Creación de estructuras metálicas para techos, pérgolas y
+                    toldos.</li>
+                <li><strong>Muebles de Metal:</strong> Diseño y fabricación de muebles personalizados, como mesas,
+                    sillas y estanterías.</li>
+                <li><strong>Cercas y Vallas:</strong> Construcción de cercas y vallas para delimitar propiedades y áreas
+                    específicas.</li>
             </ul>
         </section>
 
@@ -95,21 +108,21 @@
 
 
         <!-- Modal -->
-<div id="modal" class="modal hidden">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <div class="gallery-full">
-            <img src="src/porton_negro.jpg" alt="Proyecto 1">
-            <img src="src/porton_negro.jpg" alt="Proyecto 2">
-            <img src="src/porton_negro.jpg" alt="Proyecto 3">
-            <img src="src/porton_negro.jpg" alt="Proyecto 4">
-            <!-- Agrega más imágenes según sea necesario -->
+        <div id="modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="gallery-full">
+                    <img src="src/porton_negro.jpg" alt="Proyecto 1">
+                    <img src="src/porton_negro.jpg" alt="Proyecto 2">
+                    <img src="src/porton_negro.jpg" alt="Proyecto 3">
+                    <img src="src/porton_negro.jpg" alt="Proyecto 4">
+                    <!-- Agrega más imágenes según sea necesario -->
+                </div>
+            </div>
+
+
         </div>
-    </div>
 
-
-</div>
-        
         <section id="contacto">
             <h2>Contáctanos</h2>
             <a href="https://wa.me/tuNumeroTelefono" class="whatsapp-button">
@@ -139,41 +152,109 @@
     </script>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-    var header = document.querySelector('.header');
-    var headerContent = document.querySelector('.header-content');
+        document.addEventListener("DOMContentLoaded", function () {
+            var header = document.querySelector('.header');
+            var headerContent = document.querySelector('.header-content');
 
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) { // Ajusta el valor según sea necesario
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-});
+            window.addEventListener('scroll', function () {
+                if (window.scrollY > 50) { // Ajusta el valor según sea necesario
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        });
 
     </script>
-    
+
 
 
 
     <style>
-
-#inicio {
-    background-image: url('src/herreria\ y\ carpinteria\ imagen\ de\ fondo.png'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Hace que la imagen cubra todo el área del contenedor */
-    background-position: center; /* Centra la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    color: white; /* Cambia el color del texto para que contraste con la imagen de fondo */
-    padding: 50px 0; /* Añade espacio alrededor del contenido */
-    text-align: center; /* Centra el contenido de texto */
-}
-
-
+        #inicio {
+            background-image: url('src/hombreSoldando.png');
+            /* Ruta de la imagen de fondo */
+            background-size: cover;
+            /* Hace que la imagen cubra todo el área del contenedor */
+            background-position: center;
+            /* Centra la imagen en el contenedor */
+            background-repeat: no-repeat;
+            /* Evita que la imagen se repita */
+            color: white;
+            /* Cambia el color del texto para que contraste con la imagen de fondo */
+            padding: 50px 0;
+            /* Añade espacio alrededor del contenido */
+            text-align: center;
+            /* Centra el contenido de texto */
+        }
     </style>
 
+<style>
 
 
-<script src="scripts/main.js" defer></script>
+    /* Estilo para encabezados */
+    h1, h2 {
+        color: #1a9c74; /* Cambia el color a un tono verde suave */
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+
+    /* Estilo para el contenedor de servicios */
+    #servicios2 {
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        padding: 20px;
+        border-radius: 10px; /* Bordes redondeados */
+        margin: 20px;
+    }
+
+    #servicios2 ul li {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.6s ease;
+        background-color: #fff; /* Fondo blanco para la lista */
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    }
+
+    #servicios2 ul li:hover {
+        color: #1a9c74; /* Cambiar color al pasar el ratón */
+        background-color: #f0f0f0; /* Fondo más claro */
+        transform: scale(1.05);
+    }
+
+    /* Estilo para el pie de página */
+ /*    footer {
+        background-color: #1a9c74;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    } */
+</style>
+
+
+<script>
+    // Animación de entrada al hacer scroll
+    document.addEventListener("scroll", function() {
+        const servicios = document.querySelectorAll("#servicios2 ul li");
+        const sectionPos = document.querySelector("#servicios2").offsetTop;
+        const scrollPos = window.scrollY + window.innerHeight;
+
+        if (scrollPos > sectionPos) {
+            servicios.forEach((li, index) => {
+                setTimeout(() => {
+                    li.style.opacity = 1;
+                    li.style.transform = 'translateY(0)';
+                }, index * 150);
+            });
+        }
+    });
+</script>
+
+
+    <script src="scripts/main.js" defer></script>
 </body>
+
 </html>
