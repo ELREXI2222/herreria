@@ -14,8 +14,8 @@
     <!-- Indexacion de el motor de busqueda de goole, Google accede al sitio y verifica que se encuentre esta etiqueta
      disponible con esto goole confirma que el sitio me pertence -->
     <meta name="google-site-verification" content="WaPZZ3ztGhMLtm-dOUrmo85tk_JBPBt8LzyAIqlXQG4" />
-      <!-- Favicon -->
-      <link rel="icon" href="src/favico.webp" type="image/x-icon">
+    <!-- Favicon -->
+    <link rel="icon" href="src/favico.webp" type="image/x-icon">
 
     <script type="application/ld+json">
         {
@@ -35,7 +35,12 @@
           "telephone": "+52-871-363-7366",
           "priceRange": "$$"
         }
-        </script>
+        
+
+        
+    
+    
+    </script>
 
     <!-- Enlace al archivo CSS -->
     <link rel="stylesheet" href="styles/style.css">
@@ -45,6 +50,16 @@
 
     <!-- Incluir jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WLJQEC2NC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9WLJQEC2NC');
+    </script>
 </head>
 
 <body>
@@ -90,7 +105,7 @@
                 -1px 1px 0px black,   /* Sombra inferior izquierda */
                 1px 1px 0px black;    /* Sombra inferior derecha */
               color: whitesmoke;">Multiservicios Laguna: Herrería y Carpintería en la Comarca Lagunera</h1>
-             
+
 
             <p style="background-color: rgba(0, 0, 0, 0.5); color: white; padding: 10px;">
                 Nos especializamos en la creación de muebles y estructuras personalizadas para tu hogar.
@@ -217,69 +232,76 @@
         }
     </style>
 
-<style>
+    <style>
+        /* Estilo para encabezados */
+        h1,
+        h2 {
+            color: #1a9c74;
+            /* Cambia el color a un tono verde suave */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+        }
 
+        /* Estilo para el contenedor de servicios */
+        #servicios2 {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+            padding: 20px;
+            border-radius: 10px;
+            /* Bordes redondeados */
+            margin: 20px;
+        }
 
-    /* Estilo para encabezados */
-    h1, h2 {
-        color: #1a9c74; /* Cambia el color a un tono verde suave */
-        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    }
+        #servicios2 ul li {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+            background-color: #fff;
+            /* Fondo blanco para la lista */
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Sombra suave */
+        }
 
-    /* Estilo para el contenedor de servicios */
-    #servicios2 {
-        background-color: white;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        padding: 20px;
-        border-radius: 10px; /* Bordes redondeados */
-        margin: 20px;
-    }
+        #servicios2 ul li:hover {
+            color: #1a9c74;
+            /* Cambiar color al pasar el ratón */
+            background-color: #f0f0f0;
+            /* Fondo más claro */
+            transform: scale(1.05);
+        }
 
-    #servicios2 ul li {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.6s ease;
-        background-color: #fff; /* Fondo blanco para la lista */
-        padding: 15px;
-        margin-bottom: 10px;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    }
-
-    #servicios2 ul li:hover {
-        color: #1a9c74; /* Cambiar color al pasar el ratón */
-        background-color: #f0f0f0; /* Fondo más claro */
-        transform: scale(1.05);
-    }
-
-    /* Estilo para el pie de página */
- /*    footer {
+        /* Estilo para el pie de página */
+        /*    footer {
         background-color: #1a9c74;
         color: white;
         padding: 10px;
         text-align: center;
         box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     } */
-</style>
+    </style>
 
 
-<script>
-    // Animación de entrada al hacer scroll
-    document.addEventListener("scroll", function() {
-        const servicios = document.querySelectorAll("#servicios2 ul li");
-        const sectionPos = document.querySelector("#servicios2").offsetTop;
-        const scrollPos = window.scrollY + window.innerHeight;
+    <script>
+        // Animación de entrada al hacer scroll
+        document.addEventListener("scroll", function () {
+            const servicios = document.querySelectorAll("#servicios2 ul li");
+            const sectionPos = document.querySelector("#servicios2").offsetTop;
+            const scrollPos = window.scrollY + window.innerHeight;
 
-        if (scrollPos > sectionPos) {
-            servicios.forEach((li, index) => {
-                setTimeout(() => {
-                    li.style.opacity = 1;
-                    li.style.transform = 'translateY(0)';
-                }, index * 150);
-            });
-        }
-    });
-</script>
+            if (scrollPos > sectionPos) {
+                servicios.forEach((li, index) => {
+                    setTimeout(() => {
+                        li.style.opacity = 1;
+                        li.style.transform = 'translateY(0)';
+                    }, index * 150);
+                });
+            }
+        });
+    </script>
 
 
     <script src="scripts/main.js" defer></script>

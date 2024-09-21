@@ -1,50 +1,59 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
- 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
-        <meta name="keywords" content="herrería, carpintería, residencial, muebles, diseño">
-        <meta name="author" content="Nombre del Autor">
-        <title>Herrería y Carpintería - Nombre de la Empresa</title>
-        <script src="scripts/main.js" defer></script>
-        <!-- Enlace al archivo CSS -->
-        <link rel="stylesheet" href="styles/style.css">
-        <!-- Incluir jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Descubre nuestra herrería y carpintería residencial en la Comarca Lagunera. Ofrecemos diseño y fabricación de muebles a medida, instalación de estructuras metálicas y más. ¡Contáctanos para un presupuesto personalizado!">
+    <meta name="keywords" content="herrería, carpintería, residencial, muebles, diseño">
+    <meta name="author" content="Nombre del Autor">
+    <title>Herrería y Carpintería - Nombre de la Empresa</title>
+    <script src="scripts/main.js" defer></script>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Incluir jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <title>Nuestros Servicios</title>
     <style>
-      .servicios {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 30px;
-    background-color: #f4f4f4;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease; /* Transición suave para el cambio de color de fondo */
-}
+        .servicios {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+            /* Transición suave para el cambio de color de fondo */
+        }
 
-.servicio {
-    margin-bottom: 20px;
-    transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease; /* Transición suave para el cambio de tamaño, sombra y color de fondo */
-}
+        .servicio {
+            margin-bottom: 20px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease, background-color 0.3s ease;
+            /* Transición suave para el cambio de tamaño, sombra y color de fondo */
+        }
 
-.servicio:hover {
-    transform: scale(1.02); /* Aumenta ligeramente el tamaño del elemento */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta la sombra para dar un efecto de elevación */
-    background-color: #e0e0e0; /* Cambia el color de fondo para resaltar el elemento */
-}
+        .servicio:hover {
+            transform: scale(1.02);
+            /* Aumenta ligeramente el tamaño del elemento */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* Aumenta la sombra para dar un efecto de elevación */
+            background-color: #e0e0e0;
+            /* Cambia el color de fondo para resaltar el elemento */
+        }
 
-/* Opcional: Estilo para el texto dentro del servicio */
-.servicio h2 {
-    transition: color 0.3s ease; /* Transición suave para el cambio de color del texto */
-}
+        /* Opcional: Estilo para el texto dentro del servicio */
+        .servicio h2 {
+            transition: color 0.3s ease;
+            /* Transición suave para el cambio de color del texto */
+        }
 
-.servicio:hover h2 {
-    color: #333; /* Cambia el color del texto al pasar el ratón */
-}
+        .servicio:hover h2 {
+            color: #333;
+            /* Cambia el color del texto al pasar el ratón */
+        }
 
         .servicio p {
             font-size: 1.2rem;
@@ -52,70 +61,88 @@
             color: #555;
         }
     </style>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-9WLJQEC2NC"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-9WLJQEC2NC');
+    </script>
+
 </head>
+
 <body>
 
-        <!-- Encabezado del sitio -->
- <div class="header"></div>
+    <!-- Encabezado del sitio -->
+    <div class="header"></div>
 
- <script>
-    
-    // Realiza la solicitud para obtener el contenido de 'header.html'
-    fetch('header.html')
-        .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
-        .then(data => {
-            // Inserta el contenido dentro del <div> con la clase 'header'
-            document.querySelector('.header').innerHTML = data;
-            
-            // Selecciona el enlace de "Inicio" usando su ID
-            const inicioLink = document.getElementById('servicios');
-            
-            // Cambia el color del enlace a amarillo y lo pone en negrita
-            if (inicioLink) {
-                inicioLink.style.color = "#1a9c74";  
-                inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
-            }
-        });
+    <script>
 
-</script>
+        // Realiza la solicitud para obtener el contenido de 'header.html'
+        fetch('header.html')
+            .then(response => response.text())  // Convierte la respuesta en texto (contenido HTML)
+            .then(data => {
+                // Inserta el contenido dentro del <div> con la clase 'header'
+                document.querySelector('.header').innerHTML = data;
+
+                // Selecciona el enlace de "Inicio" usando su ID
+                const inicioLink = document.getElementById('servicios');
+
+                // Cambia el color del enlace a amarillo y lo pone en negrita
+                if (inicioLink) {
+                    inicioLink.style.color = "#1a9c74";
+                    inicioLink.style.fontWeight = "bold"; // Añade negrita para mayor énfasis
+                }
+            });
+
+    </script>
 
 
     <main>
-    <div class="servicios">
+        <div class="servicios">
 
-        <div class="servicio">
-            <h2>Herrería</h2>
-            <p>Contamos con una amplia variedad de trabajos de herrería: portones, barandales, puertas, pérgolas, ventanas, escaleras, rejas de seguridad, estructuras metálicas, y más. Trabajamos con materiales de alta calidad para asegurar la durabilidad y estética en cada proyecto.</p>
+            <div class="servicio">
+                <h2>Herrería</h2>
+                <p>Contamos con una amplia variedad de trabajos de herrería: portones, barandales, puertas, pérgolas,
+                    ventanas, escaleras, rejas de seguridad, estructuras metálicas, y más. Trabajamos con materiales de
+                    alta calidad para asegurar la durabilidad y estética en cada proyecto.</p>
+            </div>
+
+            <hr style="border: 1px solid #ccc; margin: 20px 0;">
+
+
+            <div class="servicio">
+                <h2>Tablaroca</h2>
+                <p>Ofrecemos servicios de instalación de muros, divisiones, repisas, closets, y más en tablaroca,
+                    proporcionando soluciones rápidas, estéticas y funcionales para el diseño de interiores.</p>
+            </div>
+
+            <hr style="border: 1px solid #ccc; margin: 20px 0;">
+
+
+
+            <div class="servicio">
+                <h2>Carpintería</h2>
+                <p>Fabricamos puertas, closets, repisas, muebles a medida, adornos decorativos, y todo tipo de proyectos
+                    de carpintería. Utilizamos maderas de calidad para lograr acabados perfectos y personalizados según
+                    las necesidades de nuestros clientes.</p>
+            </div>
+
+            <hr style="border: 1px solid #ccc; margin: 20px 0;">
+
+
+            <div class="servicio">
+                <h2>Otros Servicios</h2>
+                <p>Nuestros servicios incluyen mantenimiento de aire lavado, impermeabilización, pintura, obra civil,
+                    plomería, y más. Nos encargamos de todas las necesidades de tu hogar o negocio para garantizar un
+                    entorno seguro y cómodo.</p>
+            </div>
         </div>
 
-        <hr style="border: 1px solid #ccc; margin: 20px 0;">
+    </main>
 
-
-        <div class="servicio">
-            <h2>Tablaroca</h2>
-            <p>Ofrecemos servicios de instalación de muros, divisiones, repisas, closets, y más en tablaroca, proporcionando soluciones rápidas, estéticas y funcionales para el diseño de interiores.</p>
-        </div>
-
-        <hr style="border: 1px solid #ccc; margin: 20px 0;">
-
-
-
-        <div class="servicio">
-            <h2>Carpintería</h2>
-            <p>Fabricamos puertas, closets, repisas, muebles a medida, adornos decorativos, y todo tipo de proyectos de carpintería. Utilizamos maderas de calidad para lograr acabados perfectos y personalizados según las necesidades de nuestros clientes.</p>
-        </div>
-
-        <hr style="border: 1px solid #ccc; margin: 20px 0;">
-
-
-        <div class="servicio">
-            <h2>Otros Servicios</h2>
-            <p>Nuestros servicios incluyen mantenimiento de aire lavado, impermeabilización, pintura, obra civil, plomería, y más. Nos encargamos de todas las necesidades de tu hogar o negocio para garantizar un entorno seguro y cómodo.</p>
-        </div>
-    </div>
-
-</main>
-    
     <!-- Pie de página -->
     <footer id="hola">
         <p>&copy; 2024 Herrería y Carpintería. Todos los derechos reservados.</p>
@@ -124,18 +151,18 @@
     <!-- Enlace al archivo JS -->
     <script src="scripts/main.js"></script>
 
- 
+
 
     <script>
         // Script para gestionar el comportamiento del header en función del desplazamiento del scroll.
         // Agrega o quita la clase 'scrolled' al header cuando el usuario se desplaza más de 50 píxeles hacia abajo.
         // Esto permite modificar el estilo del header, por ejemplo, hacer que se contraiga o cambie de color al hacer scroll.
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             var header = document.querySelector('.header');
             var headerContent = document.querySelector('.header-content'); // Elemento opcional para contenido adicional del header
-    
+
             // Detecta el desplazamiento del scroll en la ventana
-            window.addEventListener('scroll', function() {
+            window.addEventListener('scroll', function () {
                 if (window.scrollY > 50) { // Si el desplazamiento es mayor a 50 píxeles
                     header.classList.add('scrolled'); // Aplica la clase 'scrolled' al header
                 } else {
@@ -144,7 +171,8 @@
             });
         });
     </script>
-    
+
 
 </body>
+
 </html>
