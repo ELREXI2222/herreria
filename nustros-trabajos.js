@@ -14,10 +14,12 @@ document.getElementById('menu').addEventListener('change', function() {
     galleryContainer.innerHTML = '';
 
     // Carga las imágenes correspondientes a la selección
-    if (selectedValue === 'estructura1') {
+    if (selectedValue === 'escaleras') {
         galleryContainer.innerHTML = `
-            <img src="src/estructura1_1.jpg" alt="Estructura 1 - Imagen 1">
-            <img src="src/estructura1_2.jpg" alt="Estructura 1 - Imagen 2">
+            <img src="src/img/escaleras/escalera.jfif" alt="Escalera metalica gris Torreon coahuila">
+            <img src="src/img/escaleras/escalera2.jfif" alt="Escalera metalica para tu negocio o empresa gris Torreon coahuila">
+            <img src="src/img/escaleras/escalera3.jfif" alt="Hermosa escalera metallica en  Torreon coahuila">
+
         `;
     } else if (selectedValue === 'puerta1') {
         galleryContainer.innerHTML = `

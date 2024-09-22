@@ -105,10 +105,11 @@
 
             <div id="menu-desplegable">
                 <label for="menu">Selecciona una categoría:</label>
+
                 <select id="menu">
                     <optgroup label="Estructuras Metálicas">
-                        <option value="estructura1">Estructura 1</option>
-                        n>
+                        <option value="escaleras">Escaleras</option>
+                        
                     </optgroup>
                     <optgroup label="Puertas">
                         <option value="puerta1">Puerta 1</option>
@@ -125,143 +126,218 @@
                 </select>
             </div>
 
+            <!--HACK gallery container-->
             <div class="gallery-container">
                 <div class="gallery">
-                    <img src="src/porton_negro.jpg" alt="Imagen 1">
-                    <img src="src/porton_negro.jpg" alt="Imagen 2">
-                    <img src="src/porton_negro.jpg" alt="Imagen 3">
-                    <!-- Añadir más imágenes según sea necesario -->
+                    <img src="src/porton_negro.jpg" alt="Porton negro herreria trabajos torreon Coahuila" >
+                    <img src="src/porton_negro.jpg" alt="Imagen 2" >
+                    <img src="src/porton_negro.jpg" alt="Imagen 3" >
                 </div>
                 <button class="nav-button prev" onclick="moveSlide(-1)">&#10094;</button>
                 <button class="nav-button next" onclick="moveSlide(1)">&#10095;</button>
             </div>
-        </section>
+
+          
 
 
-        <style>
-            #nuestros-trabajos {
-                padding: 20px;
-                background-color: #f9f9f9;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                margin: 20px 0;
-            }
+            <style>
+                #nuestros-trabajos {
+                    padding: 20px;
+                    background-color: #f9f9f9;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    margin: 20px 0;
+                }
 
-            #nuestros-trabajos h2 {
-                font-size: 2em;
-                color: #333;
-                margin-bottom: 10px;
-            }
+                #nuestros-trabajos h2 {
+                    font-size: 2em;
+                    color: #333;
+                    margin-bottom: 10px;
+                }
 
-            #nuestros-trabajos p {
-                font-size: 1.1em;
-                color: #555;
-                line-height: 1.6;
-            }
+                #nuestros-trabajos p {
+                    font-size: 1.1em;
+                    color: #555;
+                    line-height: 1.6;
+                }
 
-            #menu-desplegable {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 20vh;
-                /* Asegura que el contenido esté centrado verticalmente */
-                background-color: white;
-                /* Fondo blanco */
-            }
+                #menu-desplegable {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    height: 20vh;
+                    /* Asegura que el contenido esté centrado verticalmente */
+                    background-color: white;
+                    /* Fondo blanco */
+                }
 
-            #menu-desplegable label {
-                font-size: 1.2em;
-                margin-bottom: 10px;
-                /* Espacio entre el label y el select */
-                color: #333;
-                /* Color del texto */
-            }
+                #menu-desplegable label {
+                    font-size: 1.2em;
+                    margin-bottom: 10px;
+                    /* Espacio entre el label y el select */
+                    color: #333;
+                    /* Color del texto */
+                }
 
-            #menu {
-                width: 100%;
-                max-width: 300px;
-                /* Controla el ancho del menú */
-                padding: 10px;
-                font-size: 1em;
-                border: 2px solid #007BFF;
-                /* Borde azul */
-                border-radius: 5px;
-                background-color: #f8f9fa;
-                /* Fondo gris claro */
-                color: #333;
-            }
+                #menu {
+                    width: 100%;
+                    max-width: 300px;
+                    /* Controla el ancho del menú */
+                    padding: 10px;
+                    font-size: 1em;
+                    border: 2px solid #007BFF;
+                    /* Borde azul */
+                    border-radius: 5px;
+                    background-color: #f8f9fa;
+                    /* Fondo gris claro */
+                    color: #333;
+                }
 
-            #menu optgroup {
-                font-weight: bold;
-                color: #555;
-                /* Color de los optgroups */
-            }
+                #menu optgroup {
+                    font-weight: bold;
+                    color: #555;
+                    /* Color de los optgroups */
+                }
 
-            #menu option {
-                padding: 5px;
-                color: #333;
-            }
+                #menu option {
+                    padding: 5px;
+                    color: #333;
+                }
 
+                /*HACK css gallery container*/
+                /* Proporción para las imágenes de la galería */
+                .gallery img {
+                    width: 100%;
+                    height: auto;
+                    /* Mantiene la proporción */
+                    object-fit: cover;
+                    /* Asegura que la imagen se recorte adecuadamente dentro del contenedor */
+                    cursor: pointer;
+                    /* Cursor para indicar clic */
+                    transition: transform 0.2s;
+                    /* Suaviza el zoom */
+                }
 
-            .gallery-container {
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-                max-width: 800px;
-                margin: auto;
-            }
+                .gallery-container {
+                    position: relative;
+                    width: 100%;
+                    max-width: 800px;
+                    margin: auto;
+                    overflow: hidden;
+                }
 
-            .gallery {
-                display: flex;
-                transition: transform 0.5s ease;
-            }
+                .gallery {
+                    display: flex;
+                    transition: transform 0.5s ease;
+                }
 
-            .gallery img {
-                width: 100%;
-                flex-shrink: 0;
-                border-radius: 8px;
-            }
+                /* Botones de navegación */
+                .nav-button {
+                    position: absolute;
+                    top: 50%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    color: white;
+                    padding: 10px;
+                    cursor: pointer;
+                    border-radius: 50%;
+                    font-size: 1.5em;
+                }
 
-            .nav-button {
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: rgba(0, 0, 0, 0.5);
-                border: none;
-                color: white;
-                padding: 10px;
-                cursor: pointer;
-                border-radius: 50%;
-                font-size: 1.5em;
-            }
+                .nav-button.prev {
+                    left: 10px;
+                }
 
-            .nav-button.prev {
-                left: 10px;
-            }
+                .nav-button.next {
+                    right: 10px;
+                }
 
-            .nav-button.next {
-                right: 10px;
-            }
-        </style>
+            
+              
+
+               
+
+             
+            </style>
+           
+        
         </div>
 
 
+            <script>// Escuchar cambios en el menú desplegable
+                document.getElementById("menu").addEventListener("change", function() {
+                    // Obtener el valor seleccionado
+                    const categoriaSeleccionada = this.value;
+                
+                    // Llamar a la función para cargar imágenes según la categoría seleccionada
+                    cargarImagenes(categoriaSeleccionada);
+                });
+                
+                // Función para cargar imágenes dinámicamente
+                function cargarImagenes(categoria) {
+                    // Seleccionar el contenedor de la galería
+                    const galleryContainer = document.getElementById("gallery-container");
+                    
+                    // Limpiar el contenedor antes de cargar nuevas imágenes
+                    galleryContainer.innerHTML = '';
+                
+                    // Crear un array con las URLs de las imágenes basadas en la categoría
+                    let imagenes = [];
+                
+                    if (categoria === "estructura1") {
+                        imagenes = [
+                            'estructura1_img1.jpg',
+                            'estructura1_img2.jpg',
+                            'estructura1_img3.jpg'
+                        ];
+                    } else if (categoria === "puerta1") {
+                        imagenes = [
+                            'puerta1_img1.jpg',
+                            'puerta1_img2.jpg'
+                        ];
+                    } else if (categoria === "ventana1") {
+                        imagenes = [
+                            'ventana1_img1.jpg',
+                            'ventana1_img2.jpg'
+                        ];
+                    } else if (categoria === "toldo1") {
+                        imagenes = [
+                            'toldo1_img1.jpg',
+                            'toldo1_img2.jpg'
+                        ];
+                    }
+                
+                    // Insertar las imágenes en el contenedor de la galería
+                    imagenes.forEach(function(url) {
+                        const imgElement = document.createElement("img");
+                        imgElement.src = url;
+                        imgElement.alt = categoria + ' image';
+                        imgElement.style.width = '200px'; // Ajusta el tamaño de las imágenes según sea necesario
+                        imgElement.style.margin = '10px';
+                        
+                        galleryContainer.appendChild(imgElement);
+                    });
+                }
+                </script>
 
-        <script>
-            // Controla el desplazamiento de la galería de imágenes hacia adelante o atrás.
-            // La función moveSlide recibe una dirección (-1 para retroceder y 1 para avanzar) y ajusta el índice actual de la imagen.
-            // Calcula el desplazamiento adecuado basado en el índice actual para mover la galería horizontalmente.
-            let currentIndex = 0;
 
-            function moveSlide(direction) {
-                const gallery = document.querySelector('.gallery'); // Selecciona el contenedor de la galería
-                const totalImages = document.querySelectorAll('.gallery img').length; // Cuenta el número total de imágenes en la galería
-                currentIndex = (currentIndex + direction + totalImages) % totalImages; // Calcula el nuevo índice, asegurando que esté en el rango válido
-                const offset = -currentIndex * 100; // Desplaza la galería en un porcentaje del ancho de la imagen
-                gallery.style.transform = `translateX(${offset}%)`; // Aplica la transformación para mostrar la imagen correcta
-            }
-        </script>
+            <script>
+                // Controla el desplazamiento de la galería de imágenes hacia adelante o atrás.
+                // La función moveSlide recibe una dirección (-1 para retroceder y 1 para avanzar) y ajusta el índice actual de la imagen.
+                // Calcula el desplazamiento adecuado basado en el índice actual para mover la galería horizontalmente.
+              
+                // Controla el desplazamiento de la galería (prev y next)
+                let currentIndex = 0;
+
+                function moveSlide(direction) {
+                    const gallery = document.querySelector('.gallery');
+                    const totalImages = document.querySelectorAll('.gallery img').length;
+                    currentIndex = (currentIndex + direction + totalImages) % totalImages;
+                    const offset = -currentIndex * 100;
+                    gallery.style.transform = `translateX(${offset}%)`;
+                }
+
+            </script>
 
 
 
@@ -275,7 +351,9 @@
     <!-- Enlace al archivo JS -->
     <script src="scripts/main.js"></script>
 
+    <script>
 
+    </script>
 
     <script>
         // Script para gestionar el comportamiento del header en función del desplazamiento del scroll.
