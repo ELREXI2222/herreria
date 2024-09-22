@@ -164,10 +164,11 @@
                 Contáctanos por WhatsApp
             </a>
 
-            <a href="mailto:tova.servicios@hotmail.com" class="correo-button" style="margin-top: 10px;">
-                <img src="src/logo correo electronico.png" alt="WhatsApp Logo" class="whatsapp-logo">
+            <a href="mailto:tova.servicios@hotmail.com" class="correo-button">
+                <img src="src/logo correo electronico.png" alt="Correo Logo" class="correo-logo">
                 Envianos un Correo electronico
             </a>
+
             <p style="display: flex; align-items: center; margin: 2%; font-size: 1.02rem;">
                 tova.servicios@hotmail.com
                 <button class="copiar-button" onclick="copiarAlPortapapeles()" style="margin-left: 10px;">Copiar
@@ -200,6 +201,45 @@
             </script>
 
             <style>
+                .whatsapp-button,
+                .correo-button {
+                    display: inline-block;
+                    text-align: center;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    color: white;
+                    background-color: #25D366;
+                    /* WhatsApp verde */
+                    border: none;
+                    border-radius: 5px;
+                    width: 100%;
+                    /* Para que ambos botones ocupen el mismo ancho */
+                    max-width: 300px;
+                    /* Puedes ajustar el máximo */
+                    margin: 10px 0;
+                }
+
+                .correo-button {
+                    background-color: #0073e6;
+                    /* Color del correo */
+                }
+
+                .whatsapp-logo,
+                .correo-logo {
+                    width: 20px;
+                    margin-right: 10px;
+                    vertical-align: middle;
+                }
+
+                #section-contacto {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+
+
+
                 .mensaje-copiado {
                     opacity: 0;
                     visibility: hidden;
@@ -226,7 +266,7 @@
 
         <section id="redes-sociales">
             <h3>Síguenos en nuestras redes sociales</h3>
-            <a href="https://www.facebook.com/tuPagina" target="_blank">
+            <a href="https://www.facebook.com/tavaserv/" target="_blank">
                 <img src="src/icono facebook.png" alt="Facebook">
             </a>
             <a href="https://www.instagram.com/tuPagina" target="_blank">
